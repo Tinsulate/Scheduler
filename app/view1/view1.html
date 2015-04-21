@@ -5,8 +5,8 @@
     <p>Name: <input type="text" ng-model="name"></p>
     <p>You wrote: {{ name }}</p>
 
-    <div ng-controller="View1Ctrl" ng-repeat="item in items track by $index">
-        <p>{{item | date:'mediumTime'}} </p>
+    <div class="timeline" ng-controller="View1Ctrl" ng-repeat="item in items track by $index">
+        <div> </div>
     </div>
 
 </div>
