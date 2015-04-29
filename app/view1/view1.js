@@ -10,6 +10,7 @@ angular.module('myApp.view1', ['ngRoute', 'lvl.directives.dragdrop', 'ui.bootstr
     controller: 'View1Ctrl'
   });
 }])
+
 .controller('View1Ctrl', ['$scope', '$filter', function(sc, fl) {
 
       var newDate;
@@ -43,6 +44,7 @@ angular.module('myApp.view1', ['ngRoute', 'lvl.directives.dragdrop', 'ui.bootstr
         }
     }
 }])
+
     .controller('DatepickerCtrl', function ($scope) {
         $scope.today = function() {
             $scope.dt = new Date();
