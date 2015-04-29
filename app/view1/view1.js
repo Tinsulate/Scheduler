@@ -10,14 +10,13 @@ angular.module('myApp.view1', ['ngRoute', 'lvl.directives.dragdrop', 'ui.bootstr
     controller: 'View1Ctrl'
   });
 }])
-
 .controller('View1Ctrl', ['$scope', '$filter', function(sc, fl) {
 
       var newDate;
-      var date = new Date();
+      var curDate = new Date().getTime();
       sc.items = [];
-      for (var i = 0; 24 > i; i++) {
-        newDate = new Date(date.getTime() + (i*60*60*1000));
+      for (var i = 0; i < 24; i++) {
+        newDate = new Date(curDate + (i*60*60*1000));
         sc.items.push(fl('date')(newDate, "short"));
       }
 
@@ -43,7 +42,42 @@ angular.module('myApp.view1', ['ngRoute', 'lvl.directives.dragdrop', 'ui.bootstr
             drag.removeClass(bgClass);
         }
     }
-}]);
+}])
+    .controller('DatepickerCtrl', function ($scope) {
+        $scope.today = function() {
+            $scope.dt = new Date();
+        };
+        $scope.today();
+
+        $scope.clear = function () {
+            $scope.dt = null;
+        };
+
+        // Disable weekend selection
+        $scope.disabled = function(date, mode) {
+            return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+        };
+
+        $scope.toggleMin = function() {
+            $scope.minDate = $scope.minDate ? null : new Date();
+        };
+        $scope.toggleMin();
+
+        $scope.open = function($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+
+            $scope.opened = true;
+        };
+
+        $scope.dateOptions = {
+            formatYear: 'yy',
+            startingDay: 1
+        };
+
+        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+        $scope.format = $scope.formats[0];
+    });
 
 
 
