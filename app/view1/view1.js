@@ -1,6 +1,8 @@
-'use strict';
+//noinspection JSLint
+'use strict'; // jshint ignore:line
 
-angular.module('myApp.view1', ['ngRoute', 'lvl.directives.dragdrop'])
+
+angular.module('myApp.view1', ['ngRoute', 'lvl.directives.dragdrop', 'ui.bootstrap']) // jshint ignore:line
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -11,10 +13,11 @@ angular.module('myApp.view1', ['ngRoute', 'lvl.directives.dragdrop'])
 
 .controller('View1Ctrl', ['$scope', '$filter', function(sc, fl) {
 
+      var newDate;
       var date = new Date();
       sc.items = [];
-      for (var i = 0; i < 24; i++) {
-        var newDate = new Date(date.getTime() + (i*60*60*1000));
+      for (var i = 0; 24 > i; i++) {
+        newDate = new Date(date.getTime() + (i*60*60*1000));
         sc.items.push(fl('date')(newDate, "short"));
       }
 
