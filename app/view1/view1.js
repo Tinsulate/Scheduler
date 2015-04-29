@@ -2,7 +2,7 @@
 'use strict'; // jshint ignore:line
 
 
-angular.module('myApp.view1', ['ngRoute', 'lvl.directives.dragdrop', 'ui.bootstrap']) // jshint ignore:line
+angular.module('myApp.view1', ['ngRoute', 'myApp', 'lvl.directives.dragdrop', 'ui.bootstrap']) // jshint ignore:line
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -11,7 +11,7 @@ angular.module('myApp.view1', ['ngRoute', 'lvl.directives.dragdrop', 'ui.bootstr
   });
 }])
 
-.controller('View1Ctrl', ['$scope', '$filter', function(sc, fl) {
+.controller('View1Ctrl', ['$scope', '$filter', function(sc, fl, attractions) {
 
       var newDate;
       var curDate = new Date().getTime();
@@ -42,7 +42,9 @@ angular.module('myApp.view1', ['ngRoute', 'lvl.directives.dragdrop', 'ui.bootstr
         if (drag.attr("x-lvl-drop-target")) {
             drag.removeClass(bgClass);
         }
-    }
+    };
+
+        sc.attractions = attractions;
 }])
 
     .controller('DatepickerCtrl', function ($scope) {
