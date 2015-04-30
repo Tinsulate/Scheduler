@@ -3,8 +3,8 @@
 <div ng-app="myApp" ng-controller="View1Ctrl">
 
     <table class="attractionsTable" style="width:100%">
-        <th ng-repeat="item in items track by $index"></th>
-        <tr ng-repeat="item in items track by $index">
+        <tr><th ng-repeat="item in items track by $index"></th></tr>
+        <tr ng-repeat="attraction in attractions track by $index">
             <td x-lvl-draggable="true" class="attraction" ng-repeat="item in items track by $index"></td></tr>
     </table>
 

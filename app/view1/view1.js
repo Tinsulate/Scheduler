@@ -2,7 +2,7 @@
 'use strict'; // jshint ignore:line
 
 
-angular.module('myApp.view1', ['ngRoute', 'myApp', 'lvl.directives.dragdrop', 'ui.bootstrap']) // jshint ignore:line
+angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop', 'ui.bootstrap']) // jshint ignore:line
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -11,8 +11,8 @@ angular.module('myApp.view1', ['ngRoute', 'myApp', 'lvl.directives.dragdrop', 'u
   });
 }])
 
-.controller('View1Ctrl', ['$scope', '$filter', function(sc, fl, attractions) {
-
+.controller('View1Ctrl', ['$scope', '$filter', 'attractions', function(sc, fl, attractions) {
+      console.log(attractions);
       var newDate;
       var curDate = new Date().getTime();
       sc.items = [];
