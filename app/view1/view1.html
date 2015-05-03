@@ -4,8 +4,8 @@
 
     <table class="attractionsTable" style="width:100%">
         <tr><th ng-repeat="item in items track by $index"></th></tr>
-        <tr ng-repeat="attraction in attractions track by $index">
-            <td x-lvl-draggable="true" class="attraction" ng-repeat="item in items track by $index"></td></tr>
+        <tr ng-repeat="attraction in attractions">
+            <td>{{attraction.name}}</td><td x-lvl-draggable="true" class="attraction" ng-repeat="item in items track by $index"></td></tr>
     </table>
 
     <br/>

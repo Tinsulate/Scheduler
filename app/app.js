@@ -15,7 +15,7 @@ config(['$routeProvider', function($routeProvider) {
 
 var dataModule = angular.module('dataModule',[])
 .value('attractions',
-        {'name': 'Pelimuseo',
+    [{'name': 'Pelimuseo',
             'description': 'T‰‰ll‰ on tietokonepelej‰ sun muuta.',
             'address': 'Kaarikatu 12 A 5'},
         {'name': 'Vakoilumuseo',
@@ -23,6 +23,6 @@ var dataModule = angular.module('dataModule',[])
             'address': 'Satakunnantie 4 A 33100 Tampere'},
         {'name': 'Nanda Devi',
             'snippet': 'Ruokailumesta josta saa Intialaista ruokaa. Monenlaisia palkintoja.',
-            'address': 'Anttilankatu 4 B 33100 Tampere'}
+            'address': 'Anttilankatu 4 B 33100 Tampere'}]
         );
 
