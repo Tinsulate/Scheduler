@@ -5,8 +5,10 @@ var app = angular.module('myApp', [
   'ngRoute',
   'myApp.view1',
   'myApp.view2',
+  'ddApp',
   'myApp.version',
-  'dataModule'
+  'dataModule',
+  'lvl.directives.dragdrop'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
