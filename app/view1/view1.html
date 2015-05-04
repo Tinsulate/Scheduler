@@ -5,14 +5,14 @@
     <table class="attractionsTable" style="width:100%">
         <tr><th ng-repeat="item in items track by $index"></th></tr>
         <tr ng-repeat="attraction in attractions">
-            <td>{{attraction.name}}</td><td x-lvl-draggable="true" class="attraction" ng-repeat="item in items track by $index"></td></tr>
+            <td>{{attraction.name}}</td><td lvl-draggable="true" class="attraction" ng-repeat="item in items track by $index"></td></tr>
     </table>
 
     <br/>
 
     <div>
         <div>{{items[0]}}</div>
-        <div class="timeline" x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" ng-repeat="item in items track by $index"></div>
+        <div class="timeline" lvl-drop-target="true" on-drop="dropped(dragEl, dropEl)" ng-repeat="item in items track by $index"></div>
     </div>
 
     <div ng-controller="DatepickerCtrl">

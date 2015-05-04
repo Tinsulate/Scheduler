@@ -23,8 +23,9 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
     sc.dropped = function(dragEl, dropEl) { // function referenced by the drop target
         //this is application logic, for the demo we just want to color the grid squares
         //the directive provides a native dom object, wrap with jqlite
-        var drop = angular.element(dropEl);
-        var drag = angular.element(dragEl);
+        console.log("drop: " + dropEl + " drag: " + dragEl);
+        var drop = angular.element((document.getElementById(dropEl)));
+        var drag = angular.element((document.getElementById(dragEl)));
 
         //clear the previously applied color, if it exists
         var bgClass = drop.attr('data-color');
