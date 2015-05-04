@@ -2,7 +2,7 @@
 'use strict'; // jshint ignore:line
 
 
-angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop', 'ui.bootstrap']) // jshint ignore:line
+angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop', 'ui.bootstrap', 'mc.resizer']) // jshint ignore:line
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {

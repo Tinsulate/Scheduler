@@ -10,9 +10,10 @@
 
     <br/>
 
-    <table>
-        <tr><td>{{items[0]}}</td><td class="timeline" x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" ng-repeat="item in items track by $index"></td></tr>
-    </table>
+    <div>
+        <div>{{items[0]}}</div>
+        <div class="timeline" x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)" ng-repeat="item in items track by $index"></div>
+    </div>
 
     <div ng-controller="DatepickerCtrl">
         <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
