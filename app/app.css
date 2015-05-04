@@ -45,9 +45,19 @@
     width: 20px;
 }
 
+.timelineTable {
+    border-style: none;
+    border-collapse: separate;
+    border-spacing:0 2px;
+
+}
+
+.timelineHeader{
+    border-right-style: dotted;
+    height: 20px;
+}
+
 .timeline {
-    display: inline-block;
-    vertical-align: bottom;
     border: thin dotted;
     border-right-style: none;
     height: 20px;
