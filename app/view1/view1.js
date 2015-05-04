@@ -12,7 +12,6 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
 }])
 
 .controller('View1Ctrl', ['$scope', '$filter', 'attractions', function(sc, fl, attractions) {
-      console.log(attractions);
       var newDate;
       var curDate = new Date().getTime();
       sc.items = [];
