@@ -22,7 +22,19 @@ var dataModule = angular.module('dataModule',[])
             'description': 'Vakoilujuttuja t‰‰ll‰. Kallis hinta.',
             'address': 'Satakunnantie 4 A 33100 Tampere'},
         {'name': 'Nanda Devi',
-            'snippet': 'Ruokailumesta josta saa Intialaista ruokaa. Monenlaisia palkintoja.',
-            'address': 'Anttilankatu 4 B 33100 Tampere'}]
+            'description': 'Ruokailumesta josta saa Intialaista ruokaa. Monenlaisia palkintoja.',
+            'address': 'Anttilankatu 4 B 33100 Tampere'},
+        {'name': 'Kohteen nimi',
+            'description': 'Kohteen kuvaus, hieman historiaa sun muuta juttua',
+            'address': 'Kohteen osoite, t‰rke‰ juttu ehk‰ tai sitten ei'},
+        {'name': 'Kohteen nimi',
+            'description': 'Kohteen kuvaus, hieman historiaa sun muuta juttua',
+            'address': 'Kohteen osoite, t‰rke‰ juttu ehk‰ tai sitten ei'},
+        {'name': 'Kohteen nimi',
+            'description': 'Kohteen kuvaus, hieman historiaa sun muuta juttua',
+            'address': 'Kohteen osoite, t‰rke‰ juttu ehk‰ tai sitten ei'},
+        {'name': 'Kohteen nimi',
+            'description': 'Kohteen kuvaus, hieman historiaa sun muuta juttua',
+            'address': 'Kohteen osoite, t‰rke‰ juttu ehk‰ tai sitten ei'}]
         );
 
