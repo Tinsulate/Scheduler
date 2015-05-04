@@ -48,14 +48,9 @@
 .timelineTable {
     border-style: none;
     border-collapse: separate;
-    border-spacing:0 2px;
 
 }
 
-.timelineHeader{
-    border-right-style: dotted;
-    height: 20px;
-}
 
 .timeline {
     border: thin dotted;
