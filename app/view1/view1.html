@@ -2,11 +2,7 @@
 
 <div ng-app="myApp" ng-controller="View1Ctrl">
 
-    <table class="attractionsTable" style="width:100%">
-        <tr><th ng-repeat="item in items track by $index"></th></tr>
-        <tr ng-repeat="attraction in attractions">
-            <td>{{attraction.name}}</td><td lvl-draggable="true" class="attraction" ng-repeat="item in items track by $index"></td></tr>
-    </table>
+    <div lvl-draggable="true" class="attraction" ng-repeat="attraction in attractions">{{attraction.name}}</div>
 
     <br/>
 
