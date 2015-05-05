@@ -1,3 +1,6 @@
+* Test Almende-angular-timeline:
+    http://almende.github.io/chap-links-library/timeline.html
+    https://github.com/destegabry/angular-timeline
 * Modularize generic timelinewashline-component.
 * Think about attraction UI modularization?
 * Write tests for angular-controllers
