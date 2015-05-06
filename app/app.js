@@ -8,7 +8,8 @@ var app = angular.module('myApp', [
   'ddApp',
   'myApp.version',
   'dataModule',
-  'lvl.directives.dragdrop'
+  'lvl.directives.dragdrop',
+  'destegabry.timeline'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});

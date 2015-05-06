@@ -2,7 +2,7 @@
 'use strict'; // jshint ignore:line
 
 
-angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop', 'ui.bootstrap', 'mc.resizer']) // jshint ignore:line
+angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop', 'ui.bootstrap', 'mc.resizer', 'destegabry.timeline']) // jshint ignore:line
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -43,6 +43,24 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
         }
     };
         sc.attractions = attractions;
+
+        sc.data = [];
+
+        sc.data.push({
+            'start': new Date(2010, 7, 15),
+            'end': new Date(2010, 8, 2),  // end is optional
+            'content': 'Trajectory A'
+            // Optional: a field 'group'
+            // Optional: a field 'className'
+            // Optional: a field 'editable'
+        });
+
+        sc.options = {
+            "width":  "100%",
+            "height": "auto",
+            "style": "box",
+            "editable": true
+        };
 }])
 
     .controller('DatepickerCtrl', function ($scope) {

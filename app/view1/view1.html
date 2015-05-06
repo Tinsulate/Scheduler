@@ -4,12 +4,15 @@
         <div lvl-draggable="true" class="attraction" ng-repeat="attraction in attractions">
             <b>{{attraction.name}}</b>
             <p>{{attraction.description}}</p>
-
             <p>{{attraction.address}}</p></div>
     </div>
 
-
     <br/>
+
+    <div timeline="data"
+         timeline-options="options"
+         timeline-selection="selection">
+    </div>
 
     <div>
         <div>{{items[0]}}</div>
