@@ -14,12 +14,6 @@
          timeline-selection="selection">
     </div>
 
-    <div>
-        <div>{{items[0]}}</div>
-        <div class="timeline" lvl-drop-target="true" on-drop="dropped(dragEl, dropEl)"
-             ng-repeat="item in items track by $index"></div>
-    </div>
-
     <div ng-controller="DatepickerCtrl">
         <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
 
