@@ -4,6 +4,7 @@
 * Modularize generic timelinewashline-component.
 * Think about attraction UI modularization?
 * Write tests for angular-controllers
+* read about watchers etc, to debug broken timeline integration
 
 See these examples for schedule
 http://demos.telerik.com/kendo-ui/scheduler/angular

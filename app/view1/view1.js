@@ -11,6 +11,7 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
   });
 }])
 
+
 .controller('View1Ctrl', ['$scope', '$filter', 'attractions', function(sc, fl, attractions) {
       var newDate;
       var curDate = new Date().getTime();
@@ -45,7 +46,6 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
         sc.attractions = attractions;
 
         sc.data = [];
-
         sc.data.push({
             'start': new Date(2010, 7, 15),
             'end': new Date(2010, 8, 2),  // end is optional
@@ -61,6 +61,18 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
             "style": "box",
             "editable": true
         };
+
+    sc.addAttraction = function(attraction) {
+            sc.data.push({
+                'start': new Date(2010, 7, 13),
+                'end': new Date(2010, 7, 20),  // end is optional
+                'content': attraction.name
+                // Optional: a field 'group'
+                // Optional: a field 'className'
+                // Optional: a field 'editable'
+            });
+        console.log(sc.data);
+    }
 }])
 
     .controller('DatepickerCtrl', function ($scope) {
