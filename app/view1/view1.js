@@ -63,7 +63,6 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
                 // Optional: a field 'className'
                 // Optional: a field 'editable'
             });
-        console.log(sc.data);
     }
 }]);
 
