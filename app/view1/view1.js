@@ -58,8 +58,8 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
             sc.data.push({
                 'start': new Date(2010, 7, 13),
                 'end': new Date(2010, 7, 14),  // end is optional
-                'content': attraction.name
-                // Optional: a field 'group'
+                'content': attraction.name,
+                'group': ''
                 // Optional: a field 'className'
                 // Optional: a field 'editable'
             });
