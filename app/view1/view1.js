@@ -46,14 +46,6 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
         sc.attractions = attractions;
 
         sc.data = [];
-        sc.data.push({
-            'start': new Date(2010, 7, 15),
-            'end': new Date(2010, 8, 2),  // end is optional
-            'content': 'Trajectory A'
-            // Optional: a field 'group'
-            // Optional: a field 'className'
-            // Optional: a field 'editable'
-        });
 
         sc.options = {
             "width":  "100%",
@@ -65,7 +57,7 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
     sc.addAttractionToTimeline = function(attraction) {
             sc.data.push({
                 'start': new Date(2010, 7, 13),
-                'end': new Date(2010, 7, 20),  // end is optional
+                'end': new Date(2010, 7, 14),  // end is optional
                 'content': attraction.name
                 // Optional: a field 'group'
                 // Optional: a field 'className'
@@ -73,43 +65,7 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
             });
         console.log(sc.data);
     }
-}])
-
-    .controller('DatepickerCtrl', function ($scope) {
-        $scope.today = function() {
-            $scope.dt = new Date();
-        };
-        $scope.today();
-
-        $scope.clear = function () {
-            $scope.dt = null;
-        };
-
-        // Disable weekend selection
-        $scope.disabled = function(date, mode) {
-            return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
-        };
-
-        $scope.toggleMin = function() {
-            $scope.minDate = $scope.minDate ? null : new Date();
-        };
-        $scope.toggleMin();
-
-        $scope.open = function($event) {
-            $event.preventDefault();
-            $event.stopPropagation();
-
-            $scope.opened = true;
-        };
-
-        $scope.dateOptions = {
-            formatYear: 'yy',
-            startingDay: 1
-        };
-
-        $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-        $scope.format = $scope.formats[0];
-    });
+}]);
 
 
 
