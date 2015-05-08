@@ -6,6 +6,7 @@
 * Write tests for angular-controllers
 * prevent same time timeline items
 * adding item to timeline removes the attraction from the list
+* start a local project about timeline.js changes
 
 See these examples for schedule
 http://demos.telerik.com/kendo-ui/scheduler/angular
