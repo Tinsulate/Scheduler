@@ -62,7 +62,7 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
             "editable": true
         };
 
-    sc.addAttraction = function(attraction) {
+    sc.addAttractionToTimeline = function(attraction) {
             sc.data.push({
                 'start': new Date(2010, 7, 13),
                 'end': new Date(2010, 7, 20),  // end is optional
