@@ -55,6 +55,7 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
         };
 
     sc.addAttractionToTimeline = function(attraction) {
+            attraction.reserved = true;
             sc.data.push({
                 'start': new Date(2010, 7, 13),
                 'end': new Date(2010, 7, 14),  // end is optional
