@@ -17,34 +17,7 @@ config(['$routeProvider', function($routeProvider) {
 
 
 var dataModule = angular.module('dataModule',[])
-.value('attractions',
-    [{'name': 'Pelimuseo',
-            'description': 'T‰‰ll‰ on tietokonepelej‰ sun muuta.',
-            'address': 'Kaarikatu 12 A 5',
-            'reserved': false},
-        {'name': 'Vakoilumuseo',
-            'description': 'Vakoilujuttuja t‰‰ll‰. Kallis hinta.',
-            'address': 'Satakunnantie 4 A 33100 Tampere',
-            'reserved': false},
-        {'name': 'Nanda Devi',
-            'description': 'Ruokailumesta josta saa Intialaista ruokaa. Monenlaisia palkintoja.',
-            'address': 'Anttilankatu 4 B 33100 Tampere',
-            'reserved': false},
-        {'name': 'Kohteen nimi',
-            'description': 'Kohteen kuvaus, hieman historiaa sun muuta juttua',
-            'address': 'Kohteen osoite, t‰rke‰ juttu ehk‰ tai sitten ei',
-            'reserved': false},
-        {'name': 'Kohteen nimi',
-            'description': 'Kohteen kuvaus, hieman historiaa sun muuta juttua',
-            'address': 'Kohteen osoite, t‰rke‰ juttu ehk‰ tai sitten ei',
-            'reserved': false},
-        {'name': 'Kohteen nimi',
-            'description': 'Kohteen kuvaus, hieman historiaa sun muuta juttua',
-            'address': 'Kohteen osoite, t‰rke‰ juttu ehk‰ tai sitten ei',
-            'reserved': false},
-        {'name': 'Kohteen nimi',
-            'description': 'Kohteen kuvaus, hieman historiaa sun muuta juttua',
-            'address': 'Kohteen osoite, t‰rke‰ juttu ehk‰ tai sitten ei',
-            'reserved': false}]
-        );
+.factory('mainInfo', function($http) {
+    return $http.get('helsinki_tourism_poi.json');
+});
 

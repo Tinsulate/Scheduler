@@ -2,7 +2,13 @@
 'use strict'; // jshint ignore:line
 
 
-angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop', 'ui.bootstrap', 'mc.resizer', 'destegabry.timeline']) // jshint ignore:line
+angular.module('myApp.view1',
+['ngRoute',
+'dataModule',
+'lvl.directives.dragdrop',
+'ui.bootstrap',
+'mc.resizer',
+'destegabry.timeline']) // jshint ignore:line
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -12,7 +18,7 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
 }])
 
 
-.controller('View1Ctrl', ['$scope', '$filter', 'attractions', function(sc, fl, attractions) {
+.controller('View1Ctrl', ['$scope', '$filter', 'mainInfo', function(sc, fl, mainInfo) {
       var newDate;
       var curDate = new Date().getTime();
       sc.items = [];
@@ -43,7 +49,22 @@ angular.module('myApp.view1', ['ngRoute', 'dataModule', 'lvl.directives.dragdrop
             drag.removeClass(bgClass);
         }
     };
-        sc.attractions = attractions;
+
+        sc.attractions = [];
+
+        mainInfo.success(function(data) {
+            data.rss.channel.item.forEach(function(entry) {
+                sc.attractions.push(
+                    {
+                        'name': entry.title,
+                        'description': entry.description,
+                        'address': entry.address.__text,
+                        'link': entry.link,
+                        'reserved': false
+                    }
+                )
+            });
+        });
 
         sc.data = [];
 
