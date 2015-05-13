@@ -60,7 +60,8 @@ angular.module('myApp.view1',
                         'description': entry.description,
                         'address': entry.address.__text,
                         'link': entry.link,
-                        'reserved': false
+                        'reserved': false,
+                        'type': entry.type1.__text
                     }
                 )
             });
