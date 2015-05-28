@@ -81,18 +81,40 @@ angular.module('myApp.view1',
         };
 
         sc.addAttractionToTimeline = function(attraction) {
-                attraction.reserved = true;
-                sc.data.push({
-                    'start': new Date(2010, 7, 13),
-                    'end': new Date(2010, 7, 14),  // end is optional
-                    'content': attraction.name,
-                    'group': '',
-                    'attraction': attraction
-                    // Optional: a field 'className'
-                    // Optional: a field 'editable'
-                });
-        }
+            //we just need the last ending time for our purposes
 
+            var start = new Date();
+            var end = new Date();
+            end.setHours(end.getHours() + 1);
+            if (sc.data.length > 0)
+            {
+                start =  sc.data.length > 0 ? getLastEndtime() : new Date();
+                end = new Date(start.getTime());
+                end.setHours(start.getHours() + 1);
+            }
+
+            attraction.reserved = true;
+            sc.data.push({
+                'start': start,
+                'end': end,  // end is optional
+                'content': attraction.name,
+                'group': '',
+                'attraction': attraction
+                // Optional: a field 'className'
+                // Optional: a field 'editable'
+            });
+
+            function getLastEndtime() {
+                var sorted = sc.data.sort(function (a, b) {
+                    var dateToCompareB = b.end ? b.end : b.start;
+                    var dateToCompareA = a.end ? a.end : a.start;
+                    return dateToCompareA > dateToCompareB ? 1 : dateToCompareA < dateToCompareB ? -1 : 0;
+                });
+
+                var endsLast = sorted[sorted.length - 1];
+                return endsLast.end ? new Date(endsLast.end.getTime()) : new Date(endsLast.start.getTime());
+            }
+        }
 
 }]);
 
