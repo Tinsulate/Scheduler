@@ -76,17 +76,24 @@ angular.module('myApp.view1',
             "editable": true
         };
 
-    sc.addAttractionToTimeline = function(attraction) {
-            attraction.reserved = true;
-            sc.data.push({
-                'start': new Date(2010, 7, 13),
-                'end': new Date(2010, 7, 14),  // end is optional
-                'content': attraction.name,
-                'group': ''
-                // Optional: a field 'className'
-                // Optional: a field 'editable'
-            });
-    }
+        sc.setAttractionVisible = function(timelineobject) {
+            timelineobject.attraction.reserved = false;
+        };
+
+        sc.addAttractionToTimeline = function(attraction) {
+                attraction.reserved = true;
+                sc.data.push({
+                    'start': new Date(2010, 7, 13),
+                    'end': new Date(2010, 7, 14),  // end is optional
+                    'content': attraction.name,
+                    'group': '',
+                    'attraction': attraction
+                    // Optional: a field 'className'
+                    // Optional: a field 'editable'
+                });
+        }
+
+
 }]);
 
 
