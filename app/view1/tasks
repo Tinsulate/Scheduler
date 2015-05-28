@@ -7,6 +7,8 @@
 * prevent same time timeline items
 * adding item to timeline removes the attraction from the list
 
+* some location information into the timeline?
+
 See these examples for schedule
 http://demos.telerik.com/kendo-ui/scheduler/angular
 https://scotch.io/tutorials/build-a-real-time-scheduling-app-using-angularjs-and-firebase

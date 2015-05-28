@@ -16,8 +16,6 @@ angular.module('myApp.view1',
     controller: 'View1Ctrl'
   });
 }])
-
-
 .controller('View1Ctrl', ['$scope', '$filter', 'mainInfo', function(sc, fl, mainInfo) {
       var newDate;
       var curDate = new Date().getTime();
@@ -81,18 +79,9 @@ angular.module('myApp.view1',
         };
 
         sc.addAttractionToTimeline = function(attraction) {
-            //we just need the last ending time for our purposes
 
-            var start = new Date();
-            var end = new Date();
-            end.setHours(end.getHours() + 1);
-            if (sc.data.length > 0)
-            {
-                start =  sc.data.length > 0 ? getLastEndtime() : new Date();
-                end = new Date(start.getTime());
-                end.setHours(start.getHours() + 1);
-            }
-
+            var start = setStart();
+            var end = setEnd(start);
             attraction.reserved = true;
             sc.data.push({
                 'start': start,
@@ -104,6 +93,25 @@ angular.module('myApp.view1',
                 // Optional: a field 'editable'
             });
 
+            function setStart() {
+                var start = new Date();
+                if (sc.data.length > 0) {
+                    start = sc.data.length > 0 ? getLastEndtime() : new Date();
+                }
+                return start;
+            }
+
+            function setEnd(start) {
+                var end = new Date();
+                end.setHours(end.getHours() + 1);
+                if (sc.data.length > 0) {
+                    end = new Date(start.getTime());
+                    end.setHours(start.getHours() + 1);
+                }
+                return end;
+            }
+
+            //we just need the last ending time for our purposes
             function getLastEndtime() {
                 var sorted = sc.data.sort(function (a, b) {
                     var dateToCompareB = b.end ? b.end : b.start;

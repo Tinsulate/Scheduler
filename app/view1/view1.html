@@ -8,7 +8,7 @@
     <div id="viewcontainer">
         <div id="columns">
             <div lvl-draggable="true" class="attraction" ng-show="!attraction.reserved" ng-repeat="attraction in attractions | filter:query | orderBy: 'type'">
-                <div show = true ng-click="addAttractionToTimeline(attraction)" >
+                <div show="true" ng-click="addAttractionToTimeline(attraction)" >
                 <b>{{attraction.name}}</b>
                 <p>{{attraction.description}}</p>
                 <p>{{attraction.address}}</p>
